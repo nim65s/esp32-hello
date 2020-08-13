@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -euox pipefail
 
 cd "$(dirname "${0}")"
 
@@ -44,7 +44,7 @@ while (( ${#@} )); do
   shift
 done
 
-SERIAL_PORT="$(find /dev -name 'tty.usbserial-*' 2>/dev/null | head -n 1 || true)"
+SERIAL_PORT="/dev/ttyUSB0"
 
 TARGET="xtensa-${CHIP}-none-elf"
 
